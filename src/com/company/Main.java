@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Test para Github.");
-        System.out.println("funciona");
+        System.out.println("Carrito de la compra");
     }
 }
