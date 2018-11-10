@@ -31,8 +31,10 @@ public class Main {
                     }
                     break;
                 case 2:
+                    System.out.println("Passar per caixa.");
                     break;
                 case 3:
+                    System.out.println("Mostrar carro de la compra.");
                     break;
                 case 0:
                     System.out.println("Gracias per la seva visita.");
