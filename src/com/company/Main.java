@@ -49,7 +49,7 @@ public class Main {
 
     private static int menuSuper () {
         System.out.println("|--------- PuigMarket ---------|");
-        System.out.println("|      1 - Afegir producte     |");
+        System.out.println("|      1 - Afegir Producte     |");
         System.out.println("|      2 - Passar per caixa    |");
         System.out.println("|      3 - Mostrar carro       |");
         System.out.println("|      0 - Sortir              |");
@@ -62,13 +62,13 @@ public class Main {
 
     private static int menuProducte () {
         int opcio;
-            System.out.println("|----- Afegir producte -----|");
+            System.out.println("|----- Afegir Producte -----|");
             System.out.println("|    1 - Alimentació        |");
             System.out.println("|    2 - Tèxtil             |");
             System.out.println("|    3 - Electrònica        |");
             System.out.println("|    0 - Tornar             |");
             System.out.println("|---------------------------|");
-            System.out.print("Quin producte vols afegir? ");
+            System.out.print("Quin Producte vols afegir? ");
             opcio = scanner.nextInt();
             scanner.nextLine();
         return opcio;
