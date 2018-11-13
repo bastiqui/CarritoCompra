@@ -2,36 +2,37 @@ package com.company;
 
 public class Producte {
     private String nom;
-    public String codiBarres;
-    public float preu;
-    public int quantitat;
+    private String codiBarres;
+    float preu;
+    //S'ha d'inicar la variable per fer els comptes.
+    private int quantitat = 1;
 
-    public void setQuantitat(int quantitat) {
+    public void setQuantitat (int quantitat) {
         this.quantitat = quantitat;
     }
 
-    public int getQuantitat() {
+    public int getQuantitat () {
         return quantitat;
     }
 
-    public String getNom() {
+    public String getNom () {
         return nom;
     }
-    public void setNom(String nom) {
+    public void setNom (String nom) {
         this.nom = nom;
     }
 
-    public String getCodiBarres() {
+    public String getCodiBarres () {
         return codiBarres;
     }
-    public void setCodiBarres(String codiBarres) {
+    public void setCodiBarres (String codiBarres) {
         this.codiBarres = codiBarres;
     }
 
-    public float getPreu() {
+    public float getPreu () {
         return preu;
     }
-    public void setPreu(float preu) {
+    public void setPreu (float preu) {
         this.preu = preu;
     }
 }

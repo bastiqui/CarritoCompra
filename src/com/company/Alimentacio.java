@@ -7,24 +7,21 @@ import java.text.ParseException;
 public class Alimentacio extends Producte {
     private Date caducitat;
 
-    public Alimentacio(String nom, String codiBarres, float preu , String data ) throws ParseException {
+    public Alimentacio (String codiBarres, String nom, float preu , String data) throws ParseException {
         setNom(nom);
         setCodiBarres(codiBarres);
-        setPreu(preu);
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Date date = df.parse(data);
         setCaducitat(date);
-    }
-    public Date getCaducitat() {
-        return caducitat;
+        setPreu(preu);
     }
 
-    public void setCaducitat(Date caducitat) {
+    private void setCaducitat (Date caducitat) {
         this.caducitat = caducitat;
     }
 
     @Override
-    public void setPreu(float preu){
+    public void setPreu (float preu){
         Date factual = new Date();
         float dif = caducitat.getTime() - factual.getTime();
         //la numeración es en segundos
@@ -32,4 +29,3 @@ public class Alimentacio extends Producte {
         this.preu = ((float) (preu - preu/(dif+1) + preu*0.1));
     }
 }
-
