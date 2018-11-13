@@ -13,9 +13,14 @@ public class Alimentacio extends Producte {
         setPreu(preu);
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Date date = df.parse(data);
+        setCaducitat(date);
     }
     public Date getCaducitat() {
         return caducitat;
+    }
+
+    public void setCaducitat(Date caducitat) {
+        this.caducitat = caducitat;
     }
 
     @Override
@@ -24,9 +29,7 @@ public class Alimentacio extends Producte {
         float dif = caducitat.getTime() - factual.getTime();
         //la numeración es en segundos
         dif = (dif/1000)/86400;
-        this.preu = (float) (preu - preu/(dif+1) + preu*0.1);
-
+        this.preu = ((float) (preu - preu/(dif+1) + preu*0.1));
     }
-
 }
 

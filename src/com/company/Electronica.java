@@ -4,7 +4,7 @@ public class Electronica extends Producte {
     private int garantia;
 
     public Electronica (String codi, String nom, float preu, int dies){
-        setCodiBarres(codiBarres);
+        setCodiBarres(codi);
         setNom(nom);
         setGarantia(dies);
         setPreu(preu);
@@ -19,6 +19,6 @@ public class Electronica extends Producte {
 
     @Override
     public void setPreu(float preu){
-        this.preu = (float)(preu+preu*this.garantia*0.1/365);
+        this.preu = ((float)(preu+preu*this.garantia*0.1/365));
     }
 }

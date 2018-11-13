@@ -17,4 +17,9 @@ public class Textil extends Producte{
     public void setComposicio(String composicio) {
         this.composicio = composicio;
     }
+
+    @Override
+    public void setPreu(float preu){
+        this.preu = ((float)(preu+preu*0.1/365));
+    }
 }

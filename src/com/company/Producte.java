@@ -1,9 +1,18 @@
 package com.company;
 
-public abstract class Producte {
+public class Producte {
     private String nom;
     public String codiBarres;
     public float preu;
+    public int quantitat;
+
+    public void setQuantitat(int quantitat) {
+        this.quantitat = quantitat;
+    }
+
+    public int getQuantitat() {
+        return quantitat;
+    }
 
     public String getNom() {
         return nom;
@@ -19,7 +28,7 @@ public abstract class Producte {
         this.codiBarres = codiBarres;
     }
 
-    private float getPreu() {
+    public float getPreu() {
         return preu;
     }
     public void setPreu(float preu) {
