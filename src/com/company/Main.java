@@ -18,7 +18,7 @@ public class Main {
     private static void showProductes (ArrayList<Producte> producte){
         System.out.println("Producte\tQuantitat");
         for(int i = 0; i < producte.size(); i++) {
-            System.out.printf("%s\t\t\t\t%d%n", producte.get(i).getNom(), producte.get(i).getQuantitat());
+            System.out.printf("%8s\t\t\t%d%n", producte.get(i).getNom(), producte.get(i).getQuantitat());
         }
     }
 
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Producte\tQuantitat\tPreu Unitari\tPreu");
 
         for(int i = 0; i < producte.size(); i++) {
-            System.out.printf("%s\t\t\t%d\t\t\t%.2f €\t\t\t%.2f €%n", producte.get(i).getNom(), producte.get(i).getQuantitat(), producte.get(i).getPreu(), producte.get(i).getPreu()*producte.get(i).getQuantitat() );
+            System.out.printf("%8s\t\t%d\t\t\t%.2f €\t\t\t%.2f €%n", producte.get(i).getNom(), producte.get(i).getQuantitat(), producte.get(i).getPreu(), producte.get(i).getPreu()*producte.get(i).getQuantitat());
         }
 
         for(int i = 0; i < producte.size(); i++) {
@@ -66,7 +66,7 @@ public class Main {
             String data = br.readLine();
             producte.add(new Alimentacio(codi, nom, preu, data));
         }
-        //Aument de l'array de int per poder introduïr més productes
+        //Augment de la variable per rastrejar el producte
         p++;
     }
 
@@ -122,6 +122,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ParseException {
         int escogirMenu, escogirProducte;
+        //Creacio d'una ArrayList de productes
         ArrayList<Producte> producte = new ArrayList <>();
 
         do {
@@ -148,9 +149,15 @@ public class Main {
                     break;
                 case 2:
                     showTicket(producte);
+                    //Despres de comprar, s'ha de buidar el carro
+                    producte.clear();
                     break;
                 case 3:
-                    showProductes(producte);
+                    if (producte.isEmpty()) {
+                        System.out.println("El carro està buit.");
+                    } else {
+                        showProductes(producte);
+                    }
                     break;
                 case 0:
                     System.out.println("Gracias per la seva visita.");

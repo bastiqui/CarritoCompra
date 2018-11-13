@@ -4,7 +4,7 @@ public class Producte {
     private String nom;
     private String codiBarres;
     float preu;
-    //S'ha d'inicar la variable per fer els comptes.
+    //S'ha d'inicar la variable per fer els compte del producte afegit.
     private int quantitat = 1;
 
     public void setQuantitat (int quantitat) {

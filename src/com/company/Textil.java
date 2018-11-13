@@ -10,6 +10,10 @@ public class Textil extends Producte{
         setComposicio(composicio);
     }
 
+    public String getComposicio() {
+        return composicio;
+    }
+
     private void setComposicio(String composicio) {
         this.composicio = composicio;
     }

@@ -16,16 +16,20 @@ public class Alimentacio extends Producte {
         setPreu(preu);
     }
 
+    public Date getCaducitat() {
+        return caducitat;
+    }
+
     private void setCaducitat (Date caducitat) {
         this.caducitat = caducitat;
     }
 
     @Override
     public void setPreu (float preu){
-        Date factual = new Date();
-        float dif = caducitat.getTime() - factual.getTime();
-        //la numeración es en segundos
-        dif = (dif/1000)/86400;
-        this.preu = ((float) (preu - preu/(dif+1) + preu*0.1));
+        Date dataActual = new Date();
+        float tempsCaducitat = caducitat.getTime() - dataActual.getTime();
+        //la numeració es en segons
+        tempsCaducitat = (tempsCaducitat/1000)/86400;
+        this.preu = ((float) (preu - preu/(tempsCaducitat+1) + preu*0.1));
     }
 }

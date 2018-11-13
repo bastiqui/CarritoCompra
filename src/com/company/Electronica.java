@@ -10,6 +10,10 @@ public class Electronica extends Producte {
         setPreu(preu);
     }
 
+    public int getGarantia() {
+        return garantia;
+    }
+
     private void setGarantia (int garantia) {
         this.garantia = garantia;
     }
